@@ -14,337 +14,296 @@
 	<div class="wrapper">
 		<!-- шапка -->
 		<header class="header">
-			<div class="header__wrapper">
-				<div class="header__container">
-					<a href="" class="header__logo"><img src="img/logo.png" alt=""></a>
-					<div class="header__menu menu">
-						<!-- кнопка для мобильного меню -->
-						<div class="menu__icon icon-menu"><span></span></div>
-						<nav class="menu__body">
-							<ul class="menu__list">
-								<!-- data трибут для прокруток -->
-								<li class="menu__item"><a href="#" data-goto=".section-1" class="menu__link">What we do</a></li>
-								<li class="menu__item"><a href="#" data-goto=".section-2" class="menu__link">Tools</a></li>
-								<li class="menu__item"><a href="#" data-goto=".section-3" class="menu__link">Clients</a></li>
-								<li class="menu__item"><a href="#" data-goto=".section-4" class="menu__link">Contacts</a></li>
-							</ul>
-						</nav>
-						<!-- кнопка, которую переносим в блок с меню на телефоне -->
-						<div data-da=".menu__body, 767, last" class="header__button">
-							<button class="header__button-item">Get template</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
+    <div class="header__wrapper">
+        <div class="header__container">
+            <!-- ЛЕВАЯ ЧАСТЬ: меню -->
+            <div class="header__left">
+                <nav class="menu">
+                    <ul class="menu__list">
+                        <li class="menu__item"><a href="#" data-goto=".section-1" class="menu__link">О нас</a></li>
+                        <li class="menu__item"><a href="#" data-goto=".section-2" class="menu__link">Номера</a></li>
+                        <li class="menu__item"><a href="#" data-goto=".section-3" class="menu__link">Фотогалерея</a></li>
+                        <li class="menu__item"><a href="#" data-goto=".section-4" class="menu__link">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- ЦЕНТР: текстовый логотип -->
+            <a href="#" class="header__logo">Алтай Мулине</a>
+
+            <!-- ПРАВАЯ ЧАСТЬ: телефон + кнопка -->
+            <div class="header__right">
+                <a href="tel:+79833100117" class="header__phone">+7 (983) 310 01 17</a>
+                <div class="header__button">
+                    <a href="#booking" class="header__button-item">Забронировать</a>
+                </div>
+            </div>
+
+            <!-- Бургер для мобильных -->
+            <div class="menu__icon icon-menu"><span></span></div>
+        </div>
+    </div>
+</header>
 		<main class="page">
-			<div class="page__wrapper">
-				<!-- первй блок -->
- 				<div class="page__container">
-					<div class="page__description">
-						<p class="page__description-theme">
-							Photographer & Filmmaker
-						</p>
-						<h1 class="page__description-title">Aperture Studios</h1>
-						<div class="page__description-sub-title">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Suspendisse varius enim in eros elementum tristique.
-							Duis cursus, mi quis viverra ornare, eros dolor interdum nulla,
-							ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id
-							rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
-						</div>
-					</div>
-				</div>
-				<!-- блок для иконок снизу -->
-				<div class="photo__info">
-					<i class="_icon-excerpt"><sup> 1/2000s</sup></i>
-					<i class="_icon-aperture"><sup> f/11</sup></i>
-					<i class="_icon-iso"><sup> 100</sup></i>
-					<i class="_icon-map"><sup> Iceland</sup></i>
-				</div>
+    <!-- ===== ПЕРВЫЙ БЛОК (ШАПКА С ФОТО) ===== -->
+    <div class="page__wrapper">
+    <div class="page__container">
+        <div class="page__description">
+            <p class="page__description-theme" style="font-size:18px; letter-spacing:4px; color:#fff; opacity:0.8;">
+                База отдыха
+            </p>
+            <h1 class="page__description-title" style="font-size:64px; font-weight:700; line-height:1.1; color:#fff; margin:10px 0;">
+                Алтай Мулине
+            </h1>
+
+            <!-- ===== КНОПКА "ЗАБРОНИРОВАТЬ" ===== -->
+            <a href="#booking" class="hero__button">
+                <span class="hero__button-icon"></span>
+                Забронировать
+            </a>
+        </div>
+    </div>
+</div>
+
+    <!-- ===== БЛОК "О НАС" ===== -->
+    <section class="page__about section-1" id="about">
+        <div class="page__container">
+            <div class="about__wrapper">
+                <div class="about__content">
+                    <h2 class="about__title">Наша база</h2>
+                    <div class="about__info">
+                        <p class="about__address">
+                            <span class="about__icon">📍</span>
+                            Республика Горный Алтай, Чемальский район, Аносинское сельское поселение территории ПК "Рублевка" ул. Лесная, д. 2
+                        </p>
+                        <p class="about__phone">
+                            <span class="about__icon">📞</span>
+                            <a href="tel:+79833100117">+7 (983) 310 01 17</a>
+                        </p>
+                    </div>
+                    <div class="about__description">
+                        <p>
+                            Если вы планируете провести отдых на Алтае, увидеть горы и насладиться уникальной природой, Долина Рублевки идеально подойдёт для вас.
+                        </p>
+                        <p>
+                            Мы предлагаем уютные домики в самом центре Рублевки с прекрасным видом на горы. На нашей базе отдыха вы сможете почувствовать себя как дома.
+                        </p>
+                    </div>
+                    <a href="#booking" class="about__button">
+                        <span class="about__button-icon"></span>
+                        Забронировать
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <!-- ===== БЛОК "НАШИ НОМЕРА" ===== -->
+<section class="page__do section-2" id="services">
+    <div class="wrapper__do">
+        <div class="do__container">
+            <h2 class="do__title">Наши номера</h2>
+            <p class="do__subtitle">Уютные домики для вашего отдыха</p>
+
+            <!-- Карточки (4 штуки) -->
+            <div class="do__products">
+                <div class="do__products-item product-1">
+                    <div class="products__wrapper">
+                        <h3 class="products__item-title">Гостиная</h3>
+                        <p class="products__item-description">
+                            Просторная гостиная с панорамными окнами и камином. 
+                            Мягкая мебель, тёплый плед и чай с видом на горы — идеальное место для вечернего отдыха.
+                        </p>
+                    </div>
+                </div>
+                <div class="do__products-item product-2">
+                    <div class="products__wrapper">
+                        <h3 class="products__item-title">Спальня</h3>
+                        <p class="products__item-description">
+                            Просторная спальня с большой кроватью и удобным матрасом. 
+                            Просыпаться здесь одно удовольствие.
+                        </p>
+                    </div>
+                </div>
+                <div class="do__products-item product-3">
+                    <div class="products__wrapper">
+                        <h3 class="products__item-title">Кухня</h3>
+                        <p class="products__item-description">
+                            Уютная кухня, оборудованная всем необходимым для приготовления завтраков и уютных ужинов. 
+            				Электрический чайник, микроволновая печь, холодильник, набор посуды и базовые специи уже ждут вас.
+                        </p>
+                    </div>
+                </div>
+                <div class="do__products-item product-4">
+                    <div class="products__wrapper">
+                        <h3 class="products__item-title">Туалет</h3>
+                        <p class="products__item-description">
+                            Чистый и уютный санузел с тёплым полом, душем и всеми необходимыми 
+                            принадлежностями.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Блок с домиком -->
+			<div class="do__house">
+			    <div class="do__house-image">
+			        <img src="img/house.jpg" alt="Домик Алтай Мулине">
+			    </div>
+			    <div class="do__house-content">
+			        <h3 class="do__house-title">Стандартный домик</h3>
+			        <div class="do__house-meta">
+			            <span class="do__house-price">15 000 ₽</span>
+			        </div>
+			        <div class="do__house-info">
+			            <p><strong>Размер:</strong> 28 кв. м. с террасой 16 кв. м</p>
+			            <p><strong>Спальные места:</strong> Большая двуспальная кровать, 2-х спальный диван, кухня, терраса</p>
+			            <p><strong>Удобства:</strong> Быстрый интернет, кондиционер, приточная вентиляция, теплые полы, фен, полотенца, постельное белье, посуда, ТВ, мебель на террасе.</p>
+			        </div>
+			        <a href="#booking" class="do__house-button">
+			            <span class="do__house-button-icon"></span>
+			            Забронировать
+			        </a>
+			    </div>
 			</div>
-			<!-- блок с услугами -->
-			<section class="page__do section-1">
-				<div class="wrapper__do">
-					<div class="do__container">
-						<h2 class="do__title">What we do.</h2>
-						<p class="do__subtitle">The areas that we're specialized in.</p>
-						<div class="do__products">
-							<div class="do__products-item product-1">
-								<div class="products__wrapper">
-									<h3 class="products__item-title">Product Photography</h3>
-									<p class="products__item-description">
-										Cras commodo consequat orci, in convallis risus egestas non.
-										Nulla efficitur auctor hendrerit. Etiam ut orci varius, faucibus libero ac, cursus quam.
-									</p>
-									<a href="#" class="products__item-link">
-										<div class="item__link-block"></div>
-										Read more
-									</a>
-								</div>
-							</div>
-							<div class="do__products-item product-2">
-								<div class="products__wrapper">
-									<h3 class="products__item-title">Architecture Photography</h3>
-									<p class="products__item-description">
-										Aenean porta neque eget consequat fringilla. Vestibulum ultrices,
-										orci nec egestas pharetra, ligula est semper enim, nec auctor sapien
-										leo nec purus. Fusce tincidunt aliquet sapien, sit amet rhoncus leo imperdiet nec.
-									</p>
-									<a href="#" class="products__item-link">
-										<div class="item__link-block"></div>
-										Read more
-									</a>
-								</div>
-							</div>
-							<div class="do__products-item product-3">
-								<div class="products__wrapper">
-									<h3 class="products__item-title">Drone Photography</h3>
-									<p class="products__item-description">
-										Mauris euismod elit et nisi ultrices, ut faucibus orci tincidunt.
-										Duis tristique sed lorem a vestibulum. Cras commodo consequat orci,
-										in convallis risus egestas non. Nulla efficitur auctor hendrerit.
-										Etiam ut orci varius, faucibus libero ac, cursus quam.
-									</p>
-									<a href="#" class="products__item-link">
-										<div class="item__link-block"></div>
-										Read more
-									</a>
-								</div>
-							</div>
-							<div class="do__products-item product-4">
-								<div class="products__wrapper">
-									<h3 class="products__item-title">Wildlife Photographyy</h3>
-									<p class="products__item-description">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-										scelerisque aliquam odio et faucibus. Nulla rhoncus feugiat eros
-										quis consectetur. Morbi neque ex, condimentum dapibus congue et,
-										vulputate ut ligula. Vestibulum sit amet urna turpis.
-									</p>
-									<a href="#" class="products__item-link">
-										<div class="item__link-block"></div>
-										Read more
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- блок с Японией -->
-			<section class="page__japan">
-				<div class="page__japan-text">
-					<h3 class="japan__text-title">
-						Sunset at Mount Fuji
-					</h3>
-					<p class="japan__text-description">
-						Duis tristique sed lorem a vestibulum. 
-						Cras commodo consequat orci, in convallis risus egestas non.
-					</p>
-				</div>
-				<div class="photo__info">
-					<i class="_icon-excerpt"><sup> 1"</sup></i>
-					<i class="_icon-aperture"><sup> f/16</sup></i>
-					<i class="_icon-iso"><sup> 400</sup></i>
-					<i class="_icon-map"><sup> Japan</sup></i>
-				</div>
-			</section>
-			<!-- здесь страница интсрументов  -->
-			<section class="page__tools section-2">
-				<div class="tools__wrapper">
-					<div class="tools__left">
-						<div class="tools__left-text">
-							<p class="left__text-theme">
-								The Gear cage
-							</p>
-							<h2 class="left__text-title">
-								The tools that we use.
-							</h2>
-							<p class="left__text-description">
-								The say that "no place is boring if you've had a good night's 
-								sleep and have a pocket full of unexposed film". 
-								While we don't shoot (a lot) of film these days — these are 
-								the tools that we actually use everyday to capture the amazing 
-								things around us.
-							</p>
-							<a href="#" class="products__item-link">
-								<div class="item__link-block"></div>
-								Check it out
-							</a>
-						</div>
-					</div>
-					<div class="tools__right">
-						<div class="photo__info">
-							<i class="_icon-excerpt"><sup> 0,8"</sup></i>
-							<i class="_icon-aperture"><sup> f/5,6</sup></i>
-							<i class="_icon-iso"><sup> 100</sup></i>
-							<i class="_icon-map"><sup> Sweden</sup></i>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- картинка с листвой -->
-			<section class="page__costa">
-				<div class="page__costa-text">
-					<h3 class="costa__text-title">
-						Monstera Leafs
-					</h3>
-					<p class="costa__text-description">
-						Vestibulum sit amet urna turpis. 
-						Mauris euismod elit et nisi ultrices, 
-						ut faucibus orci tincidunt. 
-					</p>
-				</div>
-				<div class="photo__info">
-					<i class="_icon-excerpt"><sup> 1/400s</sup></i>
-					<i class="_icon-aperture"><sup> f/3,5</sup></i>
-					<i class="_icon-iso"><sup> 100</sup></i>
-					<i class="_icon-map"><sup> Costa Rica</sup></i>
-				</div>
-			</section>
-			<!-- блок с коиетами -->
-			<section class="page__clients section-3">
-				<div class="page__container">
-					<div class="clients__wrapper">
-						<h2 class="clients__title">
-							Past clients
-						</h2>
-						<p class="clients__description">
-							Trusted by your favourite companies
-						</p>
-						<ul class="clients__list">
-							<li class="clients__list-item">
-								<img src="img/hill.png" alt="">
-							</li>
-							<li class="clients__list-item">
-								<img src="img/riksgransen.png" alt="">
-							</li>
-							<li class="clients__list-item">
-								<img src="img/studio.png" alt="">
-							</li>
-							<li class="clients__list-item">
-								<img src="img/chill.png" alt="">
-							</li>
-							<li class="clients__list-item">
-								<img src="img/stockholm.png" alt="">
-							</li>
-						</ul>
-					</div>
-				</div>
-			</section>
-			<!-- блок с горой и небом -->
-			<section class="page__night">
-				<div class="page__night-text">
-					<h3 class="night__text-title">
-						Star fall in the Himalayas
-					</h3>
-					<p class="night__text-description">
-						Nulla rhoncus feugiat eros quis consectetur. 
-						Morbi neque ex, condimentum dapibus congue et, 
-						vulputate ut ligula. 
-					</p>
-				</div>
-				<div class="photo__info">
-					<i class="_icon-excerpt"><sup> 6"</sup></i>
-					<i class="_icon-aperture"><sup> f/11</sup></i>
-					<i class="_icon-iso"><sup> 800</sup></i>
-					<i class="_icon-map"><sup> Nepal</sup></i>
-				</div>
-			</section>
-			<section class="page__help">
-				<div class="page__container">
-					<div class="help__wrapper">
-						<h2 class="help__title">
-							Need help with photography or videography?
-						</h2>
-						<p class="help__description">
-							We're here for you!
-						</p>
-						<a href="#" class="products__item-link">
-							<div class="item__link-block"></div>
-							Get in touch 
-						</a>
-					</div>
-				</div>
-			</section>
-		</main>
-		<!-- подвал -->
-		<footer class="footer section-4">
-			<div class="footer__container">
-				<div class="footer__wrapper">
-					<section class="footer__top">
-						<div class="section__top-left">
-							<div class="top__left-img">
-								<img src="img/logo.png" alt="">
-							</div>
-							<div class="top__left-description">
-								Photographers & videographers 
-								capturing the world around us.
-							</div>
-						</div>
-						<div class="section__top-right">
-							<div class="top__right-areas">
-								<h4 class="right__areas-title">
-									Business areas
-								</h4>
-								<ul class="right__areas-content">
-									<li>Product Photography</li>
-									<li>Architecture Photography</li>
-									<li>Drone Photography</li>
-									<li>Wildlife Photography</li>
-								</ul>
-							</div>
-							<div class="top_right-pages">
-								<h4 class="right__pages-title">
-									Pages
-								</h4>
-								<ul class="right__pages-content">
-									<li>Gear cage</li>
-									<li>Featured images</li>
-									<li>Contact</li>
-									<li>Style guide</li>
-									<li>Instructions</li>
-									<li>Changelog</li>
-								</ul>
-							</div>
-						</div>
-					</section>
-					<!-- средний блок подвала -->
-					<section class="footer__subscribe">
-						<div class="footer__subscribe-text">
-							<h3 class="subscribe__text-title">
-								Subscribe to our newsletter
-							</h3>
-							<p class="subscribe__text-description">
-								Read about all the things we do.
-							</p>
-						</div>
-						<form class="footer__subscribe-form" method="post" action="">
-							<div class="subscribe__form-button">
-								<input type="text">
-								<button type="submit"></button>
-							</div>
-						</form>
-					</section>
-					<!-- нижний блок в плодвале -->
-					<section class="footer__social">
-						<div class="footer__social-text">
-							© Aperture Photography, Inc. All rights reserved. Licensing.
-						</div>
-						<ul class="footer__socical-icons">
-							<li>
-								<a href="#" class="_icon-twitter"></a>
-							</li>
-							<li>
-								<a href="#" class="_icon-insta"></a>
-							</li>
-							<li>
-								<a href="#" class="_icon-facebook"></a>
-							</li>
-						</ul>
-					</section>
-				</div>
-			</div>
+
+        </div>
+    </div>
+</section>
+
+	<!-- ===== БЛОК "ФОТОГАЛЕРЕЯ" ===== -->
+	<section class="page__gallery section-3" id="gallery">
+	    <div class="page__container">
+	        <h2 class="gallery__title">Фотогалерея</h2>
+		
+	        <!-- Текстовый блок с фоном как в "О нас" -->
+	        <div class="gallery__text-wrapper">
+	            <div class="gallery__text">
+	                <p>
+	                    Наш отель располагается в самой интересной части Рублевки. Спокойное, тихое место в 400 метрах от аквапарка "Рублевка". Рестораны и кафе в 300 метрах от отеля.
+	                </p>
+	                <p>
+	                    Отель расположен среди сосен, берез и яблонь, а самые удобные горные тропы располагаются в пешей доступности — смотровая площадка на высоте 610 м над уровнем моря. Вы увидите долину "Рублевка", реку Катунь и село Элекмонар, Анос, Аюла. Также для Вас комфортные маршруты для поездки на квадроциклах и велосипедах.
+	                </p>
+	            </div>
+	        </div>
+		
+	        <div class="gallery__grid">
+	            <div class="gallery__item gallery__item--large">
+	                <img src="img/landscape1.jpg" alt="">
+	            </div>
+	            <div class="gallery__item">
+	                <img src="img/view.jpg" alt="">
+	            </div>
+	            <div class="gallery__item">
+	                <img src="img/landscape3.jpg" alt="">
+	            </div>
+	            <div class="gallery__item">
+	                <img src="img/landscape4.jpg" alt="">
+	            </div>
+	            <div class="gallery__item gallery__item--large">
+	                <img src="img/landscape2.jpg" alt="">
+	            </div>
+	        </div>
+	    </div>
+	</section>
+
+    <!-- ===== БЛОК БРОНИРОВАНИЯ ===== -->
+	<section class="page__booking section-3" id="booking">
+	    <div class="page__container">
+	        <div class="booking__wrapper">
+	            <h2 class="booking__title">Забронируйте номер</h2>
+	            <p class="booking__description">
+	                Заполните форму с информацией, и мы отправим вам e-mail подтверждение
+	            </p>
+			
+	            <form class="booking__form" method="post" action="">
+	                <div class="booking__form-row">
+	                    <div class="booking__form-group">
+	                        <input type="text" placeholder="Имя" required>
+	                    </div>
+	                    <div class="booking__form-group">
+	                        <input type="tel" placeholder="Телефон" required>
+	                    </div>
+	                </div>
+	                <div class="booking__form-row">
+	                    <div class="booking__form-group">
+	                        <input type="email" placeholder="E-mail">
+	                    </div>
+	                    <div class="booking__form-group">
+	                        <input type="date" placeholder="Дата заезда">
+	                    </div>
+	                </div>
+	                <div class="booking__form-group">
+	                    <textarea placeholder="Комментарий (количество гостей, пожелания)"></textarea>
+	                </div>
+				
+	                <button type="submit" class="booking__submit">
+	                    <span class="booking__submit-icon"></span>
+	                    Забронировать
+	                </button>
+	            </form>
+	        </div>
+	    </div>
+	</section>
+
+    <!-- ===== БЛОК С КАРТОЙ ===== -->
+	<section class="page__map section-4" id="contacts">
+	    <div class="page__container">
+	        <h2 class="map__title">Как нас найти</h2>
+	        <div class="map__wrapper">
+            <iframe 
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3A08e892e72e5eea16d045dc0f79a1337ce4a66cc9e7f2c1679e896f1dcadab922&amp;source=constructor" 
+                width="100%" 
+                height="450" 
+                style="border:0; display:block; border-radius:14px;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+	        </div>
+	    </div>
+	</section>
+</main>
+		<!-- ===== ФУТЕР ===== -->
+		<footer class="footer section-5">
+		    <div class="footer__container">
+		        <div class="footer__wrapper">
+		            <!-- Верхняя часть -->
+		            <div class="footer__top">
+		                <div class="footer__brand">
+		                    <div class="footer__logo">Алтай Мулине</div>
+		                    <p class="footer__description">
+		                        Уютная база отдыха в самом сердце Горного Алтая.
+		                    </p>
+		                </div>
+		                <div class="footer__nav">
+		                    <div class="footer__nav-column">
+		                        <h4 class="footer__nav-title">Навигация</h4>
+		                        <ul class="footer__nav-list">
+		                            <li><a href="#" data-goto=".section-1">О нас</a></li>
+		                            <li><a href="#" data-goto=".section-2">Номера</a></li>
+		                            <li><a href="#" data-goto=".section-3">Фотогалерея</a></li>
+		                            <li><a href="#" data-goto=".section-4">Контакты</a></li>
+		                        </ul>
+		                    </div>
+		                    <div class="footer__nav-column">
+		                        <h4 class="footer__nav-title">Контакты</h4>
+		                        <ul class="footer__nav-list">
+		                            <li><a href="tel:+79833100117">+7 (983) 310 01 17</a></li>
+		                            <li>Алтай, Чемальский р-н</li>
+		                        </ul>
+		                    </div>
+		                </div>
+		            </div>
+				
+		            <!-- Нижняя часть -->
+		            <div class="footer__bottom">
+		                <p class="footer__copyright">
+		                    © 2026 Алтай Мулине. Все права защищены.
+		                </p>
+		            </div>
+		        </div>
+		    </div>
 		</footer>
 	</div>
 

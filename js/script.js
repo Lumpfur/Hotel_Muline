@@ -46,6 +46,29 @@ if(isMobile.any()) { // если одна из функций определен
     document.body.classList.add('_pc') // если ни одна функция определение мобильного устройства не сработала, 
 }                                      // присваиваем body класс _pc
 
+
+
+// ===== ПЛАВНАЯ ПРОКРУТКА ДЛЯ ВСЕХ КНОПОК "ЗАБРОНИРОВАТЬ" =====
+document.addEventListener('DOMContentLoaded', function() {
+    const bookingLinks = document.querySelectorAll('a[href="#booking"]');
+    
+    bookingLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector('#booking');
+            if (target) {
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
+
 // Прокрутка к разделам
 
 const menuLinks = document.querySelectorAll('.menu__link[data-goto]'); // получаем ссылки в меню которые ведут к разделам
