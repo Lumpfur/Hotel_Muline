@@ -187,19 +187,15 @@ body._lock {
     flex: 0 1 auto;
 }
 .header__logo {
-    display: flex;
-    align-items: center;
-    gap: 14px; 
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     text-decoration: none;
-    white-space: nowrap;
     z-index: 10;
 }
 
 .header__logo-img {
-    height: 50px; 
+    height: 130px; 
     width: auto;
     display: block;
 }
@@ -1054,15 +1050,20 @@ body._lock {
 
 /* ===== МОБИЛЬНАЯ ВЕРСИЯ ===== */
 @media (max-width: 767px) {
-    .header {
-        height: 60px;
-        background: #1a1a2e;
 
+    .header {
+        heaight: 70px;
     }
+
     .header__logo {
         position: static;
         transform: none;
-        gap: 10px;
+    }
+
+    .header__logo-img {
+        height: 80px !important;
+         width: auto;
+        display: block;
     }
 
     .header__logo-img {
