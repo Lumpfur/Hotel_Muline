@@ -370,7 +370,7 @@ body._lock {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.49);
     z-index: 1;
 }
 .page__container {
@@ -1061,7 +1061,7 @@ body._lock {
     }
 
     .header__logo-img {
-        height: 80px !important;
+        height: 100px !important;
          width: auto;
         display: block;
     }
