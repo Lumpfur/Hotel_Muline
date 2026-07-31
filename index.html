@@ -2,21 +2,23 @@
 <html lang="ru">
 
 <head>
-	<title>Главная</title>
-	<meta charset="UTF-8">
-	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="css/style.css">
-	<!-- подключение иконки для вкладки -->
-	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Алтай Мулине — База отдыха</title>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
-	<div class="wrapper">
-		<!-- шапка -->
-		<header class="header">
+    <div class="wrapper">
+
+        <!-- ===== ХЕДДЕР ===== -->
+        <header class="header">
     <div class="header__wrapper">
         <div class="header__container">
-            <!-- ЛЕВАЯ ЧАСТЬ: меню -->
+
+            <!-- ЛЕВАЯ ЧАСТЬ: меню (десктоп) -->
             <div class="header__left">
                 <nav class="menu">
                     <ul class="menu__list">
@@ -28,8 +30,11 @@
                 </nav>
             </div>
 
-            <!-- ЦЕНТР: текстовый логотип -->
-            <a href="#" class="header__logo">Алтай Мулине</a>
+            <!-- ЦЕНТР: логотип + надпись -->
+            <a href="#" class="header__logo">
+                <img src="img/logo_hotel.svg" alt="Алтай Мулине" class="header__logo-img">
+                <span class="header__logo-text">Алтай Мулине</span>
+            </a>
 
             <!-- ПРАВАЯ ЧАСТЬ: телефон + кнопка -->
             <div class="header__right">
@@ -39,277 +44,271 @@
                 </div>
             </div>
 
-            <!-- Бургер для мобильных -->
+            <!-- БУРГЕР (только на мобилках) -->
             <div class="menu__icon icon-menu"><span></span></div>
+
         </div>
     </div>
 </header>
-		<main class="page">
-    <!-- ===== ПЕРВЫЙ БЛОК (ШАПКА С ФОТО) ===== -->
-    <div class="page__wrapper">
-    <div class="page__container">
-        <div class="page__description">
-            <p class="page__description-theme" style="font-size:18px; letter-spacing:4px; color:#fff; opacity:0.8;">
-                База отдыха
-            </p>
-            <h1 class="page__description-title" style="font-size:64px; font-weight:700; line-height:1.1; color:#fff; margin:10px 0;">
-                Алтай Мулине
-            </h1>
 
-            <!-- ===== КНОПКА "ЗАБРОНИРОВАТЬ" ===== -->
-            <a href="#booking" class="hero__button">
-                <span class="hero__button-icon"></span>
-                Забронировать
-            </a>
-        </div>
-    </div>
+       <!-- ===== МОБИЛЬНОЕ МЕНЮ ===== -->
+<div class="menu__body">
+    <ul class="menu__list">
+        <li class="menu__item"><a href="#" data-goto=".section-1" class="menu__link">О нас</a></li>
+        <li class="menu__item"><a href="#" data-goto=".section-2" class="menu__link">Номера</a></li>
+        <li class="menu__item"><a href="#" data-goto=".section-3" class="menu__link">Фотогалерея</a></li>
+        <li class="menu__item"><a href="#" data-goto=".section-4" class="menu__link">Контакты</a></li>
+    </ul>
+    <a href="tel:+79833100117" class="menu__phone">+7 (983) 310 01 17</a>
+    <a href="#booking" class="menu__button" id="menuBookingBtn">Забронировать</a>
 </div>
 
-    <!-- ===== БЛОК "О НАС" ===== -->
-    <section class="page__about section-1" id="about">
-        <div class="page__container">
-            <div class="about__wrapper">
-                <div class="about__content">
-                    <h2 class="about__title">Наша база</h2>
-                    <div class="about__info">
-                        <p class="about__address">
-                            <span class="about__icon">📍</span>
-                            Республика Горный Алтай, Чемальский район, Аносинское сельское поселение территории ПК "Рублевка" ул. Лесная, д. 2
-                        </p>
-                        <p class="about__phone">
-                            <span class="about__icon">📞</span>
-                            <a href="tel:+79833100117">+7 (983) 310 01 17</a>
-                        </p>
-                    </div>
-                    <div class="about__description">
-                        <p>
-                            Если вы планируете провести отдых на Алтае, увидеть горы и насладиться уникальной природой, Долина Рублевки идеально подойдёт для вас.
-                        </p>
-                        <p>
-                            Мы предлагаем уютные домики в самом центре Рублевки с прекрасным видом на горы. На нашей базе отдыха вы сможете почувствовать себя как дома.
-                        </p>
-                    </div>
-                    <a href="#booking" class="about__button">
-                        <span class="about__button-icon"></span>
-                        Забронировать
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- ===== MAIN ===== -->
+        <main class="page">
 
- <!-- ===== БЛОК "НАШИ НОМЕРА" ===== -->
-<section class="page__do section-2" id="services">
-    <div class="wrapper__do">
-        <div class="do__container">
-            <h2 class="do__title">Наши номера</h2>
-            <p class="do__subtitle">Уютные домики для вашего отдыха</p>
-
-            <!-- Карточки (4 штуки) -->
-            <div class="do__products">
-                <div class="do__products-item product-1">
-                    <div class="products__wrapper">
-                        <h3 class="products__item-title">Гостиная</h3>
-                        <p class="products__item-description">
-                            Просторная гостиная с панорамными окнами и камином. 
-                            Мягкая мебель, тёплый плед и чай с видом на горы — идеальное место для вечернего отдыха.
-                        </p>
-                    </div>
-                </div>
-                <div class="do__products-item product-2">
-                    <div class="products__wrapper">
-                        <h3 class="products__item-title">Спальня</h3>
-                        <p class="products__item-description">
-                            Просторная спальня с большой кроватью и удобным матрасом. 
-                            Просыпаться здесь одно удовольствие.
-                        </p>
-                    </div>
-                </div>
-                <div class="do__products-item product-3">
-                    <div class="products__wrapper">
-                        <h3 class="products__item-title">Кухня</h3>
-                        <p class="products__item-description">
-                            Уютная кухня, оборудованная всем необходимым для приготовления завтраков и уютных ужинов. 
-            				Электрический чайник, микроволновая печь, холодильник, набор посуды и базовые специи уже ждут вас.
-                        </p>
-                    </div>
-                </div>
-                <div class="do__products-item product-4">
-                    <div class="products__wrapper">
-                        <h3 class="products__item-title">Туалет</h3>
-                        <p class="products__item-description">
-                            Чистый и уютный санузел с тёплым полом, душем и всеми необходимыми 
-                            принадлежностями.
-                        </p>
+            <!-- ===== ПЕРВЫЙ БЛОК ===== -->
+            <div class="page__wrapper">
+                <div class="page__container">
+                    <div class="page__description">
+                        <p class="page__description-theme">База отдыха</p>
+                        <h1 class="page__description-title">Алтай Мулине</h1>
+                        <a href="#booking" class="hero__button">
+                            <span class="hero__button-icon"></span>
+                            Забронировать
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <!-- Блок с домиком -->
-			<div class="do__house">
-			    <div class="do__house-image">
-			        <img src="img/house.jpg" alt="Домик Алтай Мулине">
-			    </div>
-			    <div class="do__house-content">
-			        <h3 class="do__house-title">Стандартный домик</h3>
-			        <div class="do__house-meta">
-			            <span class="do__house-price">15 000 ₽</span>
-			        </div>
-			        <div class="do__house-info">
-			            <p><strong>Размер:</strong> 28 кв. м. с террасой 16 кв. м</p>
-			            <p><strong>Спальные места:</strong> Большая двуспальная кровать, 2-х спальный диван, кухня, терраса</p>
-			            <p><strong>Удобства:</strong> Быстрый интернет, кондиционер, приточная вентиляция, теплые полы, фен, полотенца, постельное белье, посуда, ТВ, мебель на террасе.</p>
-			        </div>
-			        <a href="#booking" class="do__house-button">
-			            <span class="do__house-button-icon"></span>
-			            Забронировать
-			        </a>
-			    </div>
-			</div>
+            <!-- ===== БЛОК "О НАС" ===== -->
+            <section class="page__about section-1" id="about">
+                <div class="page__container">
+                    <div class="about__wrapper">
+                        <div class="about__content">
+                            <h2 class="about__title">Наша база</h2>
+                            <div class="about__info">
+                                <p class="about__address">
+                                    <span class="about__icon">📍</span>
+                                    Республика Горный Алтай, Чемальский район, Аносинское сельское поселение территории ПК "Рублевка" ул. Лесная, д. 2
+                                </p>
+                                <p class="about__phone">
+                                    <span class="about__icon">📞</span>
+                                    <a href="tel:+79833100117">+7 (983) 310 01 17</a>
+                                </p>
+                            </div>
+                            <div class="about__description">
+                                <p>
+                                    Уютная база отдыха в самом сердце Горного Алтая на Рублевке рада видеть своих гостей.
+									Комфортные домики с панорамными окнами, террасой и видом на горы открывают свои двери для вас.
+									Тишина и комфорт в окружении гор и сосен.
+                                </p>
+                            </div>
+                            <a href="#booking" class="about__button">
+                                <span class="about__button-icon"></span>
+                                Забронировать
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        </div>
+            <!-- ===== БЛОК "НАШИ НОМЕРА" ===== -->
+            <section class="page__do section-2" id="services">
+                <div class="wrapper__do">
+                    <div class="do__container">
+                        <h2 class="do__title">Наши номера</h2>
+                        <p class="do__subtitle">Уютные домики для вашего отдыха</p>
+
+                        <div class="do__products">
+                            <div class="do__products-item product-1">
+                                <div class="products__wrapper">
+                                    <h3 class="products__item-title">Гостиная</h3>
+                                    <p class="products__item-description">
+                                        Просторная гостиная с панорамными окнами и камином. Мягкая мебель, тёплый плед и чай с видом на горы — идеальное место для вечернего отдыха.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="do__products-item product-2">
+                                <div class="products__wrapper">
+                                    <h3 class="products__item-title">Спальня</h3>
+                                    <p class="products__item-description">
+                                        Просторная спальня с большой кроватью и удобным матрасом. Просыпаться здесь одно удовольствие.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="do__products-item product-3">
+                                <div class="products__wrapper">
+                                    <h3 class="products__item-title">Кухня</h3>
+                                    <p class="products__item-description">
+                                        Уютная кухня, оборудованная всем необходимым для приготовления завтраков и уютных ужинов. Электрический чайник, микроволновая печь, холодильник, набор посуды и базовые специи уже ждут вас.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="do__products-item product-4">
+                                <div class="products__wrapper">
+                                    <h3 class="products__item-title">Туалет</h3>
+                                    <p class="products__item-description">
+                                        Чистый и уютный санузел с тёплым полом, душем и всеми необходимыми принадлежностями.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Блок с домиком -->
+                        <div class="do__house">
+                            <div class="do__house-image">
+                                <img src="img/house.jpg" alt="Домик Алтай Мулине">
+                            </div>
+                            <div class="do__house-content">
+                                <h3 class="do__house-title">Стандартный домик</h3>
+                                <div class="do__house-meta">
+                                    <span class="do__house-price">15 000 ₽</span>
+                                </div>
+                                <div class="do__house-info">
+                                    <p><strong>Размер:</strong> 28 кв. м. с террасой 16 кв. м</p>
+                                    <p><strong>Спальные места:</strong> Большая двуспальная кровать, 2-х спальный диван, кухня, терраса</p>
+                                    <p><strong>Удобства:</strong> Быстрый интернет, кондиционер, приточная вентиляция, теплые полы, фен, полотенца, постельное белье, посуда, ТВ, мебель на террасе.</p>
+                                </div>
+                                <a href="#booking" class="do__house-button">
+                                    <span class="do__house-button-icon"></span>
+                                    Забронировать
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== БЛОК "ФОТОГАЛЕРЕЯ" ===== -->
+            <section class="page__gallery section-3" id="gallery">
+                <div class="page__container">
+                    <h2 class="gallery__title">Фотогалерея</h2>
+
+                    <div class="gallery__text-wrapper">
+                        <div class="gallery__text">
+                            <p>
+                                Наш отель располагается в самой интересной части Рублевки. Спокойное, тихое место в 400 метрах от аквапарка "Рублевка". Рестораны и кафе в 300 метрах от отеля.
+                            </p>
+                            <p>
+                                Отель расположен среди сосен, берез и яблонь, а самые удобные горные тропы располагаются в пешей доступности — смотровая площадка на высоте 610 м над уровнем моря. Вы увидите долину "Рублевка", реку Катунь и село Элекмонар, Анос, Аюла. Также для Вас комфортные маршруты для поездки на квадроциклах и велосипедах.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="gallery__grid">
+                        <div class="gallery__item gallery__item--large">
+                            <img src="img/landscape1.jpg" alt="Горы Алтая">
+                        </div>
+                        <div class="gallery__item">
+                            <img src="img/view.jpg" alt="Вид из дома">
+                        </div>
+                        <div class="gallery__item">
+                            <img src="img/landscape3.jpg" alt="Природа Алтая">
+                        </div>
+                        <div class="gallery__item">
+                            <img src="img/landscape4.jpg" alt="Алтайский пейзаж">
+                        </div>
+                        <div class="gallery__item gallery__item--large">
+                            <img src="img/landscape2.jpg" alt="Панорама Алтая">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== БЛОК БРОНИРОВАНИЯ ===== -->
+            <section class="page__booking" id="booking">
+                <div class="page__container">
+                    <div class="booking__wrapper">
+                        <h2 class="booking__title">Забронируйте номер</h2>
+                        <p class="booking__description">
+                            Заполните форму с информацией, и мы отправим вам e-mail подтверждение
+                        </p>
+
+                        <form class="booking__form" method="post" action="">
+                            <div class="booking__form-row">
+                                <div class="booking__form-group">
+                                    <input type="text" placeholder="Имя" required>
+                                </div>
+                                <div class="booking__form-group">
+                                    <input type="tel" placeholder="Телефон" required>
+                                </div>
+                            </div>
+                            <div class="booking__form-row">
+                                <div class="booking__form-group">
+                                    <input type="email" placeholder="E-mail">
+                                </div>
+                                <div class="booking__form-group">
+                                    <input type="date" placeholder="Дата заезда">
+                                </div>
+                            </div>
+                            <div class="booking__form-group">
+                                <textarea placeholder="Комментарий (количество гостей, пожелания)"></textarea>
+                            </div>
+
+                            <button type="submit" class="booking__submit">
+                                <span class="booking__submit-icon"></span>
+                                Забронировать
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== БЛОК С КАРТОЙ ===== -->
+            <section class="page__map section-4" id="contacts">
+                <div class="page__container">
+                    <h2 class="map__title">Как нас найти</h2>
+                    <div class="map__wrapper">
+                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A08e892e72e5eea16d045dc0f79a1337ce4a66cc9e7f2c1679e896f1dcadab922&amp;source=constructor" width="100%" height="450" style="border:0; display:block; border-radius:14px;" allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- ===== ФУТЕР ===== -->
+        <footer class="footer">
+            <div class="footer__container">
+                <div class="footer__wrapper">
+                    <div class="footer__top">
+                        <div class="footer__brand">
+                            <div class="footer__logo">Алтай Мулине</div>
+                            <p class="footer__description">
+                                Уютная база отдыха в самом сердце Горного Алтая.
+                            </p>
+                        </div>
+                        <div class="footer__nav">
+                            <div class="footer__nav-column">
+                                <h4 class="footer__nav-title">Навигация</h4>
+                                <ul class="footer__nav-list">
+                                    <li><a href="#" data-goto=".section-1">О нас</a></li>
+                                    <li><a href="#" data-goto=".section-2">Номера</a></li>
+                                    <li><a href="#" data-goto=".section-3">Фотогалерея</a></li>
+                                    <li><a href="#" data-goto=".section-4">Контакты</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer__nav-column">
+                                <h4 class="footer__nav-title">Контакты</h4>
+                                <ul class="footer__nav-list">
+                                    <li><a href="tel:+79833100117">+7 (983) 310 01 17</a></li>
+                                    <li>Алтай, Чемальский р-н</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__bottom">
+                        <p class="footer__copyright">© 2026 Алтай Мулине. Все права защищены.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
     </div>
-</section>
 
-	<!-- ===== БЛОК "ФОТОГАЛЕРЕЯ" ===== -->
-	<section class="page__gallery section-3" id="gallery">
-	    <div class="page__container">
-	        <h2 class="gallery__title">Фотогалерея</h2>
-		
-	        <!-- Текстовый блок с фоном как в "О нас" -->
-	        <div class="gallery__text-wrapper">
-	            <div class="gallery__text">
-	                <p>
-	                    Наш отель располагается в самой интересной части Рублевки. Спокойное, тихое место в 400 метрах от аквапарка "Рублевка". Рестораны и кафе в 300 метрах от отеля.
-	                </p>
-	                <p>
-	                    Отель расположен среди сосен, берез и яблонь, а самые удобные горные тропы располагаются в пешей доступности — смотровая площадка на высоте 610 м над уровнем моря. Вы увидите долину "Рублевка", реку Катунь и село Элекмонар, Анос, Аюла. Также для Вас комфортные маршруты для поездки на квадроциклах и велосипедах.
-	                </p>
-	            </div>
-	        </div>
-		
-	        <div class="gallery__grid">
-	            <div class="gallery__item gallery__item--large">
-	                <img src="img/landscape1.jpg" alt="">
-	            </div>
-	            <div class="gallery__item">
-	                <img src="img/view.jpg" alt="">
-	            </div>
-	            <div class="gallery__item">
-	                <img src="img/landscape3.jpg" alt="">
-	            </div>
-	            <div class="gallery__item">
-	                <img src="img/landscape4.jpg" alt="">
-	            </div>
-	            <div class="gallery__item gallery__item--large">
-	                <img src="img/landscape2.jpg" alt="">
-	            </div>
-	        </div>
-	    </div>
-	</section>
-
-    <!-- ===== БЛОК БРОНИРОВАНИЯ ===== -->
-	<section class="page__booking section-3" id="booking">
-	    <div class="page__container">
-	        <div class="booking__wrapper">
-	            <h2 class="booking__title">Забронируйте номер</h2>
-	            <p class="booking__description">
-	                Заполните форму с информацией, и мы отправим вам e-mail подтверждение
-	            </p>
-			
-	            <form class="booking__form" method="post" action="">
-	                <div class="booking__form-row">
-	                    <div class="booking__form-group">
-	                        <input type="text" placeholder="Имя" required>
-	                    </div>
-	                    <div class="booking__form-group">
-	                        <input type="tel" placeholder="Телефон" required>
-	                    </div>
-	                </div>
-	                <div class="booking__form-row">
-	                    <div class="booking__form-group">
-	                        <input type="email" placeholder="E-mail">
-	                    </div>
-	                    <div class="booking__form-group">
-	                        <input type="date" placeholder="Дата заезда">
-	                    </div>
-	                </div>
-	                <div class="booking__form-group">
-	                    <textarea placeholder="Комментарий (количество гостей, пожелания)"></textarea>
-	                </div>
-				
-	                <button type="submit" class="booking__submit">
-	                    <span class="booking__submit-icon"></span>
-	                    Забронировать
-	                </button>
-	            </form>
-	        </div>
-	    </div>
-	</section>
-
-    <!-- ===== БЛОК С КАРТОЙ ===== -->
-	<section class="page__map section-4" id="contacts">
-	    <div class="page__container">
-	        <h2 class="map__title">Как нас найти</h2>
-	        <div class="map__wrapper">
-            <iframe 
-                src="https://yandex.ru/map-widget/v1/?um=constructor%3A08e892e72e5eea16d045dc0f79a1337ce4a66cc9e7f2c1679e896f1dcadab922&amp;source=constructor" 
-                width="100%" 
-                height="450" 
-                style="border:0; display:block; border-radius:14px;" 
-                allowfullscreen="" 
-                loading="lazy">
-            </iframe>
-	        </div>
-	    </div>
-	</section>
-</main>
-		<!-- ===== ФУТЕР ===== -->
-		<footer class="footer section-5">
-		    <div class="footer__container">
-		        <div class="footer__wrapper">
-		            <!-- Верхняя часть -->
-		            <div class="footer__top">
-		                <div class="footer__brand">
-		                    <div class="footer__logo">Алтай Мулине</div>
-		                    <p class="footer__description">
-		                        Уютная база отдыха в самом сердце Горного Алтая.
-		                    </p>
-		                </div>
-		                <div class="footer__nav">
-		                    <div class="footer__nav-column">
-		                        <h4 class="footer__nav-title">Навигация</h4>
-		                        <ul class="footer__nav-list">
-		                            <li><a href="#" data-goto=".section-1">О нас</a></li>
-		                            <li><a href="#" data-goto=".section-2">Номера</a></li>
-		                            <li><a href="#" data-goto=".section-3">Фотогалерея</a></li>
-		                            <li><a href="#" data-goto=".section-4">Контакты</a></li>
-		                        </ul>
-		                    </div>
-		                    <div class="footer__nav-column">
-		                        <h4 class="footer__nav-title">Контакты</h4>
-		                        <ul class="footer__nav-list">
-		                            <li><a href="tel:+79833100117">+7 (983) 310 01 17</a></li>
-		                            <li>Алтай, Чемальский р-н</li>
-		                        </ul>
-		                    </div>
-		                </div>
-		            </div>
-				
-		            <!-- Нижняя часть -->
-		            <div class="footer__bottom">
-		                <p class="footer__copyright">
-		                    © 2026 Алтай Мулине. Все права защищены.
-		                </p>
-		            </div>
-		        </div>
-		    </div>
-		</footer>
-	</div>
-
-
-	<script src="js/dynamicAdapt.js"></script>
-	<script src="js/script.js"></script>
+    <script src="js/dynamicAdapt.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

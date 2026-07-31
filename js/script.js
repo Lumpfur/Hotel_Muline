@@ -31,27 +31,58 @@ const isMobile = {
 
 /**************************************************** */
 
-if(isMobile.any()) { // если одна из функций определение мобильного устройства срабатывает, 
-    document.body.classList.add('_touch') // пристваиваем для body класс _touch
-
-    let menuArrows = document.querySelectorAll('.menu__arrow'); // получем стрелочку для открытия вложенного меню
-    if(menuArrows.length > 0) // если есть хоть одна стрелочка, начинаем работу
-        for(let index = 0; index < menuArrows.length; index++) { // перебираем все стрелки
-            const menuArrow = menuArrows[index]; // в переменную сохраняем каждую стрелку по очеред
-            menuArrow.addEventListener('click', function(e) { // для каждой стрелки присваиваем событие click
-                menuArrow.parentElement.classList.toggle('_active'); // при клике добавлем и убираем класс у родителя стрелки
-            })
-        }
+if (isMobile.any()) {
+    document.body.classList.add('_touch');
 } else {
-    document.body.classList.add('_pc') // если ни одна функция определение мобильного устройства не сработала, 
-}                                      // присваиваем body класс _pc
+    document.body.classList.add('_pc');
+}
 
+// ===== ПОЛУЧАЕМ ЭЛЕМЕНТЫ МЕНЮ (ОДИН РАЗ!) =====
+const iconMenu = document.querySelector('.menu__icon');
+const menuBody = document.querySelector('.menu__body');
 
+// ===== МЕНЮ (БУРГЕР) =====
+if (iconMenu && menuBody) {
+    iconMenu.addEventListener('click', function(e) {
+        document.body.classList.toggle('_lock');
+        iconMenu.classList.toggle('_active');
+        menuBody.classList.toggle('_active');
+    });
+}
 
-// ===== ПЛАВНАЯ ПРОКРУТКА ДЛЯ ВСЕХ КНОПОК "ЗАБРОНИРОВАТЬ" =====
+// ===== ПРОКРУТКА К РАЗДЕЛАМ =====
+const menuLinks = document.querySelectorAll('.menu__link[data-goto]');
+if (menuLinks.length > 0) {
+    menuLinks.forEach(menuLink => {
+        menuLink.addEventListener('click', onMenuLinkClick);
+    });
+
+    function onMenuLinkClick(e) {
+        const menuLink = e.target;
+        if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
+            const gotoBlock = document.querySelector(menuLink.dataset.goto);
+            const gotoBlockValue = gotoBlock.getBoundingClientRect().top + scrollY - document.querySelector('header').offsetHeight;
+
+            // если открыто мобильное меню — закрываем
+            if (iconMenu && iconMenu.classList.contains('_active')) {
+                document.body.classList.remove('_lock');
+                iconMenu.classList.remove('_active');
+                menuBody.classList.remove('_active');
+            }
+
+            window.scrollTo({
+                top: gotoBlockValue,
+                behavior: "smooth"
+            });
+            e.preventDefault();
+        }
+    }
+}
+
+// ===== ПЛАВНАЯ ПРОКРУТКА ДЛЯ КНОПОК "ЗАБРОНИРОВАТЬ" =====
 document.addEventListener('DOMContentLoaded', function() {
     const bookingLinks = document.querySelectorAll('a[href="#booking"]');
-    
+
     bookingLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -59,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (target) {
                 const headerHeight = document.querySelector('.header').offsetHeight;
                 const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
-                
+
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
@@ -69,48 +100,55 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Прокрутка к разделам
+// ===== ЗАКРЫТИЕ МЕНЮ ПО КЛИКУ НА ССЫЛКУ (МОБИЛКИ) =====
+document.addEventListener('DOMContentLoaded', function() {
+    const allMenuLinks = document.querySelectorAll('.menu__link');
 
-const menuLinks = document.querySelectorAll('.menu__link[data-goto]'); // получаем ссылки в меню которые ведут к разделам
-if(menuLinks.length > 0) { // проверяем, содержится ли хоть одна ссылка, которая нам нужна
-    menuLinks.forEach(menuLink => { // перебираем все элементы
-        menuLink.addEventListener('click', onMenuLinkClick); // каждой ссылке добавлем событие клик, по которому срабатывает функция
-    });
-
-    function onMenuLinkClick(e) {
-        const menuLink = e.target; // получаем ссылку, по которой кликнули 
-        if(menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) { // проверка сожержания data атрибутов у ссылки и из верстки атрибут у этой же ссылки
-            const gotoBlock = document.querySelector(menuLink.dataset.goto); // если всё верно, получаем сам атрибут
-            const gotoBlockValue = gotoBlock.getBoundingClientRect().top + scrollY - document.querySelector('header').offsetHeight; // высчитвается расстояние до блока для прокрутки
-
-            // если у нас открыта мобильная версия сайта и мы кликаем по разделу, то надо закрыть меню и прокрутить к разделу
-            if(iconMenu.classList.contains('_active')) { // проверка, если кнопка открытия меню с классом _active
-                document.body.classList.remove('_lock') // то разрешаем прокрутку для body
-                iconMenu.classList.remove('_active'); // возвращаем кнопку в исходное положение
-                menuBody.classList.remove('_active'); // закрываем меню
+    allMenuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 767) {
+                if (iconMenu) {
+                    iconMenu.classList.remove('_active');
+                }
+                if (menuBody) {
+                    menuBody.classList.remove('_active');
+                }
+                document.body.classList.remove('_lock');
             }
-
-            // функция прокрутки
-            window.scrollTo({
-               top: gotoBlockValue, // к какому блоку двигаемся
-               behavior: "smooth"  // плавная прокрутка
-            });
-            e.preventDefault(); // отключение стандартной работы ссылки
-        }
-    }
-}
-
-/********************************************** */
-// Меню
-
-const iconMenu = document.querySelector('.menu__icon'); // получение кнопки меню
-const menuBody = document.querySelector('.menu__body'); // получения блока с меню
-if(iconMenu) { // прверка, существует ли кнопка меню
-    iconMenu.addEventListener('click', function(e) { // вешаем событие клик на кнопку меню
-        document.body.classList.toggle('_lock') // запрещаем body скролиться
-        iconMenu.classList.toggle('_active'); // анимация для кнопки
-
-        
-        menuBody.classList.toggle('_active'); // открытие меню
+        });
     });
-}
+});
+
+// ===== КНОПКА "ЗАБРОНИРОВАТЬ" В МОБИЛЬНОМ МЕНЮ =====
+document.addEventListener('DOMContentLoaded', function() {
+    const menuBookingBtn = document.getElementById('menuBookingBtn');
+    const iconMenu = document.querySelector('.menu__icon');
+    const menuBody = document.querySelector('.menu__body');
+
+    if (menuBookingBtn) {
+        menuBookingBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            // Закрываем меню
+            if (iconMenu) {
+                iconMenu.classList.remove('_active');
+            }
+            if (menuBody) {
+                menuBody.classList.remove('_active');
+            }
+            document.body.classList.remove('_lock');
+
+            // Плавно скроллим к блоку бронирования
+            const target = document.querySelector('#booking');
+            if (target) {
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+});
